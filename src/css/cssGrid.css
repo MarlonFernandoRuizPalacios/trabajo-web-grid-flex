@@ -18,53 +18,56 @@
     font-size: 1.5rem;
     color: blue;
 }
-/* Estilos base para el menú */
-.menu {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr); /* 4 columnas por defecto */
-    justify-content: space-around;
-    align-items: center;
-    background-color: #333;
-    padding: 1rem;
-    color: white;
+
+.navbar ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: row;
     gap: 10px;
 }
 
-.menu-item {
-    padding: 10px;
-    cursor: pointer;
-    text-align: center;
+.navbar li {
+    list-style: none;
 }
 
-/* Estilos para móvil (CSS Grid) */
-@media (max-width: 600px) {
-    .menu {
-        grid-template-columns: 1fr; /* Una columna en móvil */
-    }
-
-    /* Reordenar elementos con Grid */
-    .menu-item:nth-child(1) { order: 4; } /* Inicio */
-    .menu-item:nth-child(2) { order: 2; } /* Restaurantes */
-    .menu-item:nth-child(3) { order: 3; } /* Blog */
-    .menu-item:nth-child(4) { order: 1; } /* Contacto */
+.navbar li a {
+    text-decoration: none;
+    font-size: 1.5rem;
+    color: #333;
 }
 
-/* Estilos para tablet (CSS Grid) */
-@media (min-width: 601px) and (max-width: 1024px) {
-    .menu {
-        grid-template-columns: repeat(2, 1fr); /* Dos columnas en tablet */
-    }
-
-    /* Reordenar elementos con Grid */
-    .menu-item:nth-child(1) { order: 3; } /* Inicio */
-    .menu-item:nth-child(2) { order: 2; } /* Restaurantes */
-    .menu-item:nth-child(3) { order: 1; } /* Blog */
-    .menu-item:nth-child(4) { order: 4; } /* Contacto */
-}
-
-/* Estilos para desktop (CSS Grid) */
+/* Estilos para desktop (PC) */
 @media (min-width: 1025px) {
-    .menu {
-        grid-template-columns: repeat(4, 1fr); /* 4 columnas en desktop */
+    .navbar ul {
+        flex-direction: row; 
+        gap: 20px; 
+        justify-content: flex-start; 
+        align-items: center; 
     }
+}
+
+/* Estilos para tablet */
+@media (max-width: 1024px) and (min-width: 769px) {
+    .navbar ul {
+        flex-direction: column; 
+    }
+    .navbar ul li:nth-child(1) { order: 3; } 
+    .navbar ul li:nth-child(2) { order: 2; } 
+    .navbar ul li:nth-child(3) { order: 1; } 
+    .navbar ul li:nth-child(4) { order: 4; } 
+}
+
+/* Estilos para móvil */
+@media (max-width: 768px) {
+    .navbar ul {
+        flex-direction: column; 
+    }
+    .navbar ul li:nth-child(1) { order: 4; } 
+    .navbar ul li:nth-child(2) { order: 2; } 
+    .navbar ul li:nth-child(3) { order: 3; } 
+    .navbar ul li:nth-child(4) { order: 1; } 
+ 
+
 }
